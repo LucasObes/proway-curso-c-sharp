@@ -3,6 +3,7 @@ using Fundamentos.EntradaDados;
 using Fundamentos.EstruturaCondicional;
 using Fundamentos.Exercícios;
 using Fundamentos.LacoRepeticao;
+using Fundamentos.OrientacaoObjetos;
 using Fundamentos.VetorComFor;
 using Fundamentos.Vetores;
 
@@ -24,8 +25,8 @@ using Fundamentos.Vetores;
 //EstruturaCondicionalAvancada executor = new EstruturaCondicionalAvancada();
 //executor.Executar();
 
-//LacoRepeticaoWhile executor = new LacoRepeticaoWhile();
-//executor.Executar();
+//lacorepeticaowhile executor = new lacorepeticaowhile();
+//executor.executar();
 
-ExercícioVetores executor = new ExercícioVetores();
-executor.Executar();
+ListaColaboradoresInterativa executor = new ListaColaboradoresInterativa();
+executor.CalcularFolhasPagamento();
