@@ -80,6 +80,7 @@
             this.labelValorHora.Size = new System.Drawing.Size(60, 15);
             this.labelValorHora.TabIndex = 4;
             this.labelValorHora.Text = "Valor hora";
+            this.labelValorHora.Click += new System.EventHandler(this.labelValorHora_Click);
             // 
             // textBoxValorHora
             // 
@@ -87,6 +88,7 @@
             this.textBoxValorHora.Name = "textBoxValorHora";
             this.textBoxValorHora.Size = new System.Drawing.Size(290, 23);
             this.textBoxValorHora.TabIndex = 5;
+            this.textBoxValorHora.TextChanged += new System.EventHandler(this.textBoxValorHora_TextChanged);
             // 
             // button1
             // 
@@ -103,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 309);
+            this.ClientSize = new System.Drawing.Size(672, 381);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxValorHora);
             this.Controls.Add(this.labelValorHora);
