@@ -93,9 +93,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button1.Location = new System.Drawing.Point(411, 10);
+            this.button1.Location = new System.Drawing.Point(12, 115);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(252, 99);
+            this.button1.Size = new System.Drawing.Size(393, 110);
             this.button1.TabIndex = 6;
             this.button1.Text = "Calcular Salário";
             this.button1.UseVisualStyleBackColor = false;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 381);
+            this.ClientSize = new System.Drawing.Size(424, 237);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxValorHora);
             this.Controls.Add(this.labelValorHora);
@@ -114,7 +114,8 @@
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.labelNome);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Calcular Folha de Pagamento";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
