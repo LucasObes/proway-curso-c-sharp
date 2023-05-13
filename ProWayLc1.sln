@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentos", "Fundamentos\Fundamentos.csproj", "{68931A92-0A58-4EF1-96BE-45042D284856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsExemplos", "WindowsFormsExemplos\WindowsFormsExemplos.csproj", "{D5F59648-49C1-4F4D-8F44-52753ED11E0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsExemplos", "WindowsFormsExemplos\WindowsFormsExemplos.csproj", "{D5F59648-49C1-4F4D-8F44-52753ED11E0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWayModelos", "ProWayModelos\ProWayModelos.csproj", "{B106D33D-CABC-4118-8594-6717CED00E7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D5F59648-49C1-4F4D-8F44-52753ED11E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5F59648-49C1-4F4D-8F44-52753ED11E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5F59648-49C1-4F4D-8F44-52753ED11E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B106D33D-CABC-4118-8594-6717CED00E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B106D33D-CABC-4118-8594-6717CED00E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B106D33D-CABC-4118-8594-6717CED00E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B106D33D-CABC-4118-8594-6717CED00E7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

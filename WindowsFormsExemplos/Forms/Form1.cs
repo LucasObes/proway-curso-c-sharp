@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using System.Text.Json.Serialization;
+using ProWayModelos;
 
 namespace WindowsFormsExemplos
 {

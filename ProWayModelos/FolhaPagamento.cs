@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsExemplos
+namespace ProWayModelos
 {
-    internal class FolhaPagamento
+    public class FolhaPagamento
     {
         //Propriedades (características)
         public string NomeColaborador;
