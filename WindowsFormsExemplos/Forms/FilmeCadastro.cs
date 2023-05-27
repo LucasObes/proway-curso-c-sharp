@@ -80,7 +80,7 @@ namespace WindowsFormsExemplos.Forms
                 MessageBox.Show("Data de lançamento deve ser menor que a data atual");
                 return;
             }
- 
+
 
             if (comboBoxCategoria.SelectedIndex == -1)
             {
