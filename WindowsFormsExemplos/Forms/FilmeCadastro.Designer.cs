@@ -147,9 +147,12 @@
             // numericUpDownMinutos
             // 
             numericUpDownMinutos.Location = new Point(717, 73);
+            numericUpDownMinutos.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
+            numericUpDownMinutos.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownMinutos.Name = "numericUpDownMinutos";
             numericUpDownMinutos.Size = new Size(162, 23);
             numericUpDownMinutos.TabIndex = 5;
+            numericUpDownMinutos.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // labelCategoria
             // 
@@ -207,13 +210,13 @@
             radioButtonFlopouSim.Name = "radioButtonFlopouSim";
             radioButtonFlopouSim.Size = new Size(45, 19);
             radioButtonFlopouSim.TabIndex = 11;
-            radioButtonFlopouSim.TabStop = true;
             radioButtonFlopouSim.Text = "Sim";
             radioButtonFlopouSim.UseVisualStyleBackColor = true;
             // 
             // radioButtonFlopouNao
             // 
             radioButtonFlopouNao.AutoSize = true;
+            radioButtonFlopouNao.Checked = true;
             radioButtonFlopouNao.Location = new Point(924, 157);
             radioButtonFlopouNao.Name = "radioButtonFlopouNao";
             radioButtonFlopouNao.Size = new Size(47, 19);

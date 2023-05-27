@@ -16,6 +16,6 @@
 
     public enum FilmeCategoria
     {
-
+        Acao, Comedia, Suspense, Terror
     }
 }
