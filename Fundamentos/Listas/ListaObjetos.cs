@@ -70,7 +70,7 @@ namespace Fundamentos.Listas
             }
         }
 
-        enum filmeCategoriaEnum
+        enum filmeCategoriaEnum // "enum" facilita no controle para ver o que o usuário pode utilizar
         {
             LiveAction,
             Comedia,

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dataGridView = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -55,29 +55,31 @@
             textBoxPesquisa = new TextBox();
             labelQuantidade = new Label();
             buttonCancelar = new Button();
-            buttonEditar = new Button();
             buttonApagar = new Button();
+            buttonEditar = new Button();
             labelVitórias = new Label();
             labelFlopou = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            labelCodigoEditar = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinutos).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(7, 68);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(563, 428);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dataGridView.Location = new Point(7, 68);
+            dataGridView.Margin = new Padding(3, 2, 3, 2);
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.RowTemplate.Height = 25;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.Size = new Size(563, 428);
+            dataGridView.TabIndex = 0;
+            dataGridView.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -109,8 +111,8 @@
             // 
             labelListaDeFilmes.AutoSize = true;
             labelListaDeFilmes.Font = new Font("Segoe UI Historic", 17.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelListaDeFilmes.ForeColor = Color.Red;
-            labelListaDeFilmes.Location = new Point(12, 21);
+            labelListaDeFilmes.ForeColor = Color.ForestGreen;
+            labelListaDeFilmes.Location = new Point(7, 31);
             labelListaDeFilmes.Name = "labelListaDeFilmes";
             labelListaDeFilmes.Size = new Size(175, 31);
             labelListaDeFilmes.TabIndex = 1;
@@ -269,7 +271,7 @@
             // labelQuantidadeValor
             // 
             labelQuantidadeValor.AutoSize = true;
-            labelQuantidadeValor.Location = new Point(557, 506);
+            labelQuantidadeValor.Location = new Point(556, 498);
             labelQuantidadeValor.Name = "labelQuantidadeValor";
             labelQuantidadeValor.Size = new Size(13, 15);
             labelQuantidadeValor.TabIndex = 18;
@@ -292,11 +294,12 @@
             textBoxPesquisa.Name = "textBoxPesquisa";
             textBoxPesquisa.Size = new Size(287, 23);
             textBoxPesquisa.TabIndex = 20;
+            textBoxPesquisa.KeyDown += textBoxPesquisa_KeyDown;
             // 
             // labelQuantidade
             // 
             labelQuantidade.AutoSize = true;
-            labelQuantidade.Location = new Point(468, 506);
+            labelQuantidade.Location = new Point(467, 498);
             labelQuantidade.Name = "labelQuantidade";
             labelQuantidade.Size = new Size(69, 15);
             labelQuantidade.TabIndex = 21;
@@ -312,23 +315,25 @@
             buttonCancelar.UseVisualStyleBackColor = true;
             buttonCancelar.Click += buttonCancelar_Click;
             // 
-            // buttonEditar
-            // 
-            buttonEditar.Location = new Point(576, 68);
-            buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(64, 61);
-            buttonEditar.TabIndex = 23;
-            buttonEditar.Text = "Apagar";
-            buttonEditar.UseVisualStyleBackColor = true;
-            // 
             // buttonApagar
             // 
-            buttonApagar.Location = new Point(576, 135);
+            buttonApagar.Location = new Point(576, 68);
             buttonApagar.Name = "buttonApagar";
             buttonApagar.Size = new Size(64, 61);
-            buttonApagar.TabIndex = 24;
-            buttonApagar.Text = "Editar";
+            buttonApagar.TabIndex = 23;
+            buttonApagar.Text = "Apagar";
             buttonApagar.UseVisualStyleBackColor = true;
+            buttonApagar.Click += buttonApagar_Click_1;
+            // 
+            // buttonEditar
+            // 
+            buttonEditar.Location = new Point(576, 135);
+            buttonEditar.Name = "buttonEditar";
+            buttonEditar.Size = new Size(64, 61);
+            buttonEditar.TabIndex = 24;
+            buttonEditar.Text = "Editar";
+            buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonApagar_Click;
             // 
             // labelVitórias
             // 
@@ -348,15 +353,25 @@
             labelFlopou.TabIndex = 26;
             labelFlopou.Text = "Flopou?";
             // 
+            // labelCodigoEditar
+            // 
+            labelCodigoEditar.AutoSize = true;
+            labelCodigoEditar.Location = new Point(763, 6);
+            labelCodigoEditar.Name = "labelCodigoEditar";
+            labelCodigoEditar.Size = new Size(0, 15);
+            labelCodigoEditar.TabIndex = 27;
+            labelCodigoEditar.Visible = false;
+            // 
             // FilmeCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1188, 542);
+            Controls.Add(labelCodigoEditar);
             Controls.Add(labelFlopou);
             Controls.Add(labelVitórias);
-            Controls.Add(buttonApagar);
             Controls.Add(buttonEditar);
+            Controls.Add(buttonApagar);
             Controls.Add(buttonCancelar);
             Controls.Add(labelQuantidade);
             Controls.Add(textBoxPesquisa);
@@ -379,10 +394,11 @@
             Controls.Add(labelNome);
             Controls.Add(textBoxNome);
             Controls.Add(labelListaDeFilmes);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridView);
             Name = "FilmeCadastro";
             Text = "FilmeCadastro";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += FilmeCadastro_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinutos).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -390,7 +406,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView;
         private Label labelListaDeFilmes;
         private TextBox textBoxNome;
         private Label labelNome;
@@ -413,13 +429,14 @@
         private TextBox textBoxPesquisa;
         private Label labelQuantidade;
         private Button buttonCancelar;
-        private Button buttonEditar;
         private Button buttonApagar;
+        private Button buttonEditar;
         private Label labelVitórias;
         private Label labelFlopou;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private Label labelCodigoEditar;
     }
 }

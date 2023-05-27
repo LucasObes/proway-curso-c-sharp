@@ -28,48 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonFolhaPagamento = new System.Windows.Forms.Button();
-            this.buttonCadastroSimplificadoProduto = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            buttonFolhaPagamento = new Button();
+            buttonCadastroSimplificadoProduto = new Button();
+            buttonCadastroFilmes = new Button();
+            SuspendLayout();
             // 
             // buttonFolhaPagamento
             // 
-            this.buttonFolhaPagamento.Location = new System.Drawing.Point(12, 12);
-            this.buttonFolhaPagamento.Name = "buttonFolhaPagamento";
-            this.buttonFolhaPagamento.Size = new System.Drawing.Size(207, 186);
-            this.buttonFolhaPagamento.TabIndex = 0;
-            this.buttonFolhaPagamento.Text = "Folha de Pagamento";
-            this.buttonFolhaPagamento.UseVisualStyleBackColor = true;
-            this.buttonFolhaPagamento.Click += new System.EventHandler(this.button1_Click);
+            buttonFolhaPagamento.Location = new Point(12, 12);
+            buttonFolhaPagamento.Name = "buttonFolhaPagamento";
+            buttonFolhaPagamento.Size = new Size(207, 186);
+            buttonFolhaPagamento.TabIndex = 0;
+            buttonFolhaPagamento.Text = "Folha de Pagamento";
+            buttonFolhaPagamento.UseVisualStyleBackColor = true;
+            buttonFolhaPagamento.Click += button1_Click;
             // 
             // buttonCadastroSimplificadoProduto
             // 
-            this.buttonCadastroSimplificadoProduto.Location = new System.Drawing.Point(225, 12);
-            this.buttonCadastroSimplificadoProduto.Name = "buttonCadastroSimplificadoProduto";
-            this.buttonCadastroSimplificadoProduto.Size = new System.Drawing.Size(207, 186);
-            this.buttonCadastroSimplificadoProduto.TabIndex = 1;
-            this.buttonCadastroSimplificadoProduto.Text = "Cadastro Simplificado Produto";
-            this.buttonCadastroSimplificadoProduto.UseVisualStyleBackColor = true;
-            this.buttonCadastroSimplificadoProduto.Click += new System.EventHandler(this.buttonCadastroSimplificadoProduto_Click);
+            buttonCadastroSimplificadoProduto.Location = new Point(225, 12);
+            buttonCadastroSimplificadoProduto.Name = "buttonCadastroSimplificadoProduto";
+            buttonCadastroSimplificadoProduto.Size = new Size(207, 186);
+            buttonCadastroSimplificadoProduto.TabIndex = 1;
+            buttonCadastroSimplificadoProduto.Text = "Cadastro Simplificado Produto";
+            buttonCadastroSimplificadoProduto.UseVisualStyleBackColor = true;
+            buttonCadastroSimplificadoProduto.Click += buttonCadastroSimplificadoProduto_Click;
+            // 
+            // buttonCadastroFilmes
+            // 
+            buttonCadastroFilmes.Location = new Point(438, 12);
+            buttonCadastroFilmes.Name = "buttonCadastroFilmes";
+            buttonCadastroFilmes.Size = new Size(207, 186);
+            buttonCadastroFilmes.TabIndex = 2;
+            buttonCadastroFilmes.Text = "Cadastro de Filmes";
+            buttonCadastroFilmes.UseVisualStyleBackColor = true;
+            buttonCadastroFilmes.Click += buttonCadastroFilmes_Click;
             // 
             // MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonCadastroSimplificadoProduto);
-            this.Controls.Add(this.buttonFolhaPagamento);
-            this.Name = "MenuPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema Windows Forms";
-            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(buttonCadastroFilmes);
+            Controls.Add(buttonCadastroSimplificadoProduto);
+            Controls.Add(buttonFolhaPagamento);
+            Name = "MenuPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sistema Windows Forms";
+            Load += MenuPrincipal_Load;
+            ResumeLayout(false);
         }
 
         #endregion
 
         private Button buttonFolhaPagamento;
         private Button buttonCadastroSimplificadoProduto;
+        private Button buttonCadastroFilmes;
     }
 }
