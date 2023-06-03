@@ -321,5 +321,15 @@ namespace WindowsFormsExemplos.Forms
             comboBoxCategoria.DataSource = categorias;
             comboBoxCategoria.SelectedIndex = -1;
         }
+
+        private void textBoxNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

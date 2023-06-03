@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsExemplos.Forms
+namespace WindowsFormsExemplos.Exercicios
 {
-    public partial class Exercicio : Form
+    public partial class GerenciarContatos : Form
     {
-        public Exercicio()
+        public GerenciarContatos()
         {
             InitializeComponent();
         }

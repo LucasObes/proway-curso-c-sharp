@@ -125,6 +125,7 @@
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(459, 23);
             textBoxNome.TabIndex = 2;
+            textBoxNome.TextChanged += textBoxNome_TextChanged;
             // 
             // labelNome
             // 
@@ -297,6 +298,7 @@
             textBoxPesquisa.Name = "textBoxPesquisa";
             textBoxPesquisa.Size = new Size(287, 23);
             textBoxPesquisa.TabIndex = 20;
+            textBoxPesquisa.TextChanged += textBoxPesquisa_TextChanged;
             textBoxPesquisa.KeyDown += textBoxPesquisa_KeyDown;
             // 
             // labelQuantidade
