@@ -1,4 +1,5 @@
 ﻿using Fundamentos.ApresentarDados;
+using Fundamentos.BancoDados;
 using Fundamentos.EntradaDados;
 using Fundamentos.EstruturaCondicional;
 using Fundamentos.Exercícios;
@@ -29,5 +30,8 @@ using Fundamentos.Vetores;
 //lacorepeticaowhile executor = new lacorepeticaowhile();
 //executor.executar();
 
-ListaObjetos executor = new ListaObjetos();
-executor.Executar();
+//ListaObjetos executor = new ListaObjetos();
+//executor.Executar();
+
+BancoDadosExemplo01 executar = new BancoDadosExemplo01();
+executar.Executar();

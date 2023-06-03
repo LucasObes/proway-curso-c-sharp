@@ -80,7 +80,7 @@ namespace WindowsFormsExemplos.Exercicios
 
                 dataGridViewLista.Rows.Add(new object[]
                 {
-                    tarefa.nomeResponsavel, tarefa.tarefa, tarefa.nivel, tarefa.data
+                    tarefa.codigo, tarefa.nomeResponsavel, tarefa.tarefa, tarefa.nivel, tarefa.data
                 });
             }
 
