@@ -118,6 +118,7 @@
             button1Apagar.TabIndex = 22;
             button1Apagar.Text = "Apagar";
             button1Apagar.UseVisualStyleBackColor = true;
+            button1Apagar.Click += button1Apagar_Click;
             // 
             // buttonCadastrar
             // 
