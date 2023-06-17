@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Fundamentos.Listas
 {
-    internal class ListasTiposPrimitivos
+    internal class ListasTiposPrimitivos : Executor
     {
-        public void Executar()
+        public override void Executar()
         {
             // Tipos primitivos: guardam somente uma informação
             //   string, int, short, long, byte, float, double, decimal, bool, char, object...
