@@ -25,9 +25,13 @@ namespace WindowsFormsExemplos.Forms.Produtos
 
         private void ListarProdutos()
         {
+            // Obter o texto digitado pelo usuário para filtrar os produtos
+            var pesquisa = textBoxPesquisa.Text.Trim();
+
+
             // Obter a lista de produtos
             var produtoServico = new ProdutoServico();
-            var produtos = produtoServico.ObterTodos();
+            var produtos = produtoServico.ObterTodos(pesquisa);
 
             // Remover linhas do dataGridView
             dataGridView1.Rows.Clear();
@@ -70,6 +74,29 @@ namespace WindowsFormsExemplos.Forms.Produtos
 
             // Atualizar o dataGridView1 com os produtos da tabela de produtos
             ListarProdutos();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            var linhaSelecionada = dataGridView1.SelectedRows[0];
+            var id = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var produtoServico = new ProdutoServico();
+            var produtoEscolhido = produtoServico.ObterPorId(id);
+
+            var form = new CadastroProdutoForm(produtoEscolhido);
+            form.ShowDialog();
+
+            ListarProdutos();
+        }
+
+        private void textBoxPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Quando usuário apertar a tecla "enter" irá filtrar os produtos (buscar no banco de dados)
+            if (e.KeyCode == Keys.Enter)
+            {
+                ListarProdutos();
+            }
         }
     }
 }

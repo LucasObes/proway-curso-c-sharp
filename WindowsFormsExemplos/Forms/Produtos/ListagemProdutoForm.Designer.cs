@@ -37,6 +37,8 @@
             buttonEditar = new Button();
             button1Apagar = new Button();
             buttonCadastrar = new Button();
+            labelPesquisa = new Label();
+            textBoxPesquisa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -47,14 +49,13 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnId, CollumnNome, ColumnQuantidade, ColumnPrecoUnitario, ColumnPreco });
-            dataGridView1.Location = new Point(12, 62);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(10, 46);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1163, 603);
+            dataGridView1.Size = new Size(1018, 452);
             dataGridView1.TabIndex = 20;
             // 
             // ColumnId
@@ -100,21 +101,20 @@
             // buttonEditar
             // 
             buttonEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonEditar.Location = new Point(905, 23);
-            buttonEditar.Margin = new Padding(3, 4, 3, 4);
+            buttonEditar.Location = new Point(792, 17);
             buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(86, 31);
+            buttonEditar.Size = new Size(75, 23);
             buttonEditar.TabIndex = 23;
             buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // button1Apagar
             // 
             button1Apagar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1Apagar.Location = new Point(997, 23);
-            button1Apagar.Margin = new Padding(3, 4, 3, 4);
+            button1Apagar.Location = new Point(872, 17);
             button1Apagar.Name = "button1Apagar";
-            button1Apagar.Size = new Size(86, 31);
+            button1Apagar.Size = new Size(75, 23);
             button1Apagar.TabIndex = 22;
             button1Apagar.Text = "Apagar";
             button1Apagar.UseVisualStyleBackColor = true;
@@ -123,29 +123,49 @@
             // buttonCadastrar
             // 
             buttonCadastrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonCadastrar.Location = new Point(1089, 23);
-            buttonCadastrar.Margin = new Padding(3, 4, 3, 4);
+            buttonCadastrar.Location = new Point(953, 17);
             buttonCadastrar.Name = "buttonCadastrar";
-            buttonCadastrar.Size = new Size(86, 31);
+            buttonCadastrar.Size = new Size(75, 23);
             buttonCadastrar.TabIndex = 24;
             buttonCadastrar.Text = "Cadastrar";
             buttonCadastrar.UseVisualStyleBackColor = true;
             buttonCadastrar.Click += buttonCadastrar_Click;
             // 
+            // labelPesquisa
+            // 
+            labelPesquisa.AutoSize = true;
+            labelPesquisa.Location = new Point(12, 21);
+            labelPesquisa.Name = "labelPesquisa";
+            labelPesquisa.Size = new Size(53, 15);
+            labelPesquisa.TabIndex = 25;
+            labelPesquisa.Text = "Pesquisa";
+            // 
+            // textBoxPesquisa
+            // 
+            textBoxPesquisa.Location = new Point(71, 18);
+            textBoxPesquisa.Name = "textBoxPesquisa";
+            textBoxPesquisa.Size = new Size(384, 23);
+            textBoxPesquisa.TabIndex = 26;
+            textBoxPesquisa.KeyDown += textBoxPesquisa_KeyDown;
+            // 
             // ListagemProdutoForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1187, 678);
+            ClientSize = new Size(1039, 508);
+            Controls.Add(textBoxPesquisa);
+            Controls.Add(labelPesquisa);
             Controls.Add(buttonCadastrar);
             Controls.Add(buttonEditar);
             Controls.Add(button1Apagar);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ListagemProdutoForm";
             Text = "Lista de Produtos";
             Load += ListagemProdutoForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -159,5 +179,7 @@
         private Button buttonEditar;
         private Button button1Apagar;
         private Button buttonCadastrar;
+        private Label labelPesquisa;
+        private TextBox textBoxPesquisa;
     }
 }

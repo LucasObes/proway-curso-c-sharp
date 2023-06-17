@@ -24,9 +24,22 @@ namespace WindowsFormsExemplos.Repositorios
             comando.ExecuteNonQuery();
         }
 
-        public void Editar(string nome, decimal precoUnitario, int quantidade, int id)
+        public void Editar(int id, string nome, decimal precoUnitario, int quantidade)
         {
+            var bancoDadosConexao = new BancoDadosConexao();
+            var comando = bancoDadosConexao.Conectar();
 
+            comando.CommandText = @"UPDATE produtos SET 
+                nome = @NOME,
+                preco_unitario = @PRECO_UNITARIO,
+                quantidade = @QUANTIDADE
+            WHERE id = @ID";
+            comando.Parameters.AddWithValue("@NOME", nome);
+            comando.Parameters.AddWithValue("@PRECO_UNITARIO", precoUnitario);
+            comando.Parameters.AddWithValue("@QUANTIDADE", quantidade);
+            comando.Parameters.AddWithValue("@ID", id);
+
+            comando.ExecuteNonQuery();
         }
 
         public void Apagar(int id)
@@ -43,7 +56,7 @@ namespace WindowsFormsExemplos.Repositorios
             comando.ExecuteNonQuery();
         }
 
-        public List<Produto> ObterTodosProdutos()
+        public List<Produto> ObterTodosProdutos(string pesquisa)
         {
             var produtos = new List<Produto>();
 
@@ -52,7 +65,8 @@ namespace WindowsFormsExemplos.Repositorios
             var comando = bancoDadosConexao.Conectar();
 
             // Executar o comando SELECT
-            comando.CommandText = "SELECT * FROM produtos";
+            comando.CommandText = "SELECT * FROM produtos WHERE nome LIKE @PESQUISA";
+            comando.Parameters.AddWithValue("@PESQUISA", $"%{pesquisa}%");
 
             // Criar tabela em memória para carregar os registros da tabela de produtos
             var tabelaEmMemoria = new DataTable();
@@ -79,6 +93,34 @@ namespace WindowsFormsExemplos.Repositorios
 
             // Retornar a lista de produtos com os registros da tabela de produtos (banco de dados)
             return produtos;
+        }
+
+        public Produto ObterPorId(int id)
+        {
+            // Instanciando um objeto da classe BancoDadosConexao
+            var bancoDadosConexao = new BancoDadosConexao();
+            // Abrir conexao com o Banco de dados
+            var comando = bancoDadosConexao.Conectar();
+
+            comando.CommandText = "SELECT * FROM produtos WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+
+            // Criar tabela em memória para carregar o registro
+            var tabelaEmMemoria = new DataTable();
+            tabelaEmMemoria.Load(comando.ExecuteReader());
+
+            // Pegar o primeiro registro da consulta
+            var linha = tabelaEmMemoria.Rows[0];
+
+            // Instanciar o objeto de Produto e preencher as propriedades do produto com os dados do primeiro registro
+            var produto = new Produto();
+            produto.Id = Convert.ToInt32(linha["id"]);
+            produto.Nome = linha["nome"].ToString();
+            produto.Quantidade = Convert.ToInt32(linha["quantidade"]);
+            produto.PrecoUnitario = Convert.ToDecimal(linha["preco_unitario"]);
+
+            // Retornar o objeto do produto preenchido com os dados do registro consultado
+            return produto;
         }
     }
 
