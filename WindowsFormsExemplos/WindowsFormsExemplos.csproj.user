@@ -13,6 +13,12 @@
     <Compile Update="Exercicios\GerenciarTarefas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Clientes\CadastroClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Clientes\ListagemClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\FilmeCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
