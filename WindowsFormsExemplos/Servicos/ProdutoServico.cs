@@ -10,10 +10,19 @@ namespace WindowsFormsExemplos.Servicos
     public class ProdutoServico
     {
         private ProdutoRepositorio produtoRepositorio;
-        // CRUD
-        public void Cadastrar(string nome, decimal precoUnitario, int quantidade)
+
+        // Método construtor
+        public ProdutoServico()
         {
-            produtoRepositorio.Cadastrar(nome, precoUnitario, quantidade);
+            // Instanciando o objeto de ProdutoRepositorio
+            produtoRepositorio = new ProdutoRepositorio();
+        }
+
+        // CRUD
+        public void Cadastrar(Produto produto)
+        {
+
+            produtoRepositorio.Cadastrar(produto);
         }
 
         public List<Produto> ObterTodos(string pesquisa)
@@ -37,9 +46,9 @@ namespace WindowsFormsExemplos.Servicos
             return produto;
         }
 
-        internal void Editar(int idProdutoEditar, string nome, decimal precoUnitario, int quantidade)
+        internal void Editar(Produto produto)
         {
-            produtoRepositorio.Editar(idProdutoEditar, nome, precoUnitario, quantidade);
+            produtoRepositorio.Editar(produto);
         }
     }
 }

@@ -18,13 +18,13 @@ namespace WindowsFormsExemplos.Forms.Produtos
         public ListagemProdutoForm()
         {
             InitializeComponent();
+
+            produtoServico = new ProdutoServico();
         }
 
         private void ListagemProdutoForm_Load(object sender, EventArgs e)
         {
             ListarProdutos();
-
-            produtoServico = new ProdutoServico();
         }
 
         private void ListarProdutos()
@@ -59,6 +59,8 @@ namespace WindowsFormsExemplos.Forms.Produtos
             var formulario = new CadastroProdutoForm();
             formulario.Text = "Cadastrar Produto";
             formulario.ShowDialog();
+
+            ListarProdutos();
         }
 
         private void button1Apagar_Click(object sender, EventArgs e)
