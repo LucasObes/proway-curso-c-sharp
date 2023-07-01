@@ -28,6 +28,12 @@
     <Compile Update="Forms\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Pedidos\CadastroPedidosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pedidos\ListagemPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\ProdutoCadastroSimplificadoBancoDadosForm.cs">
       <SubType>Form</SubType>
     </Compile>
