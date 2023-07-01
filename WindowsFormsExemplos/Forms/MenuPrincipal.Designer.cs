@@ -34,6 +34,7 @@
             buttonCadastroSimplificadoProdutoBancoDados = new Button();
             buttonListaProdutos = new Button();
             buttonListaClientes = new Button();
+            buttonListaPedidos = new Button();
             SuspendLayout();
             // 
             // buttonFolhaPagamento
@@ -96,11 +97,22 @@
             buttonListaClientes.UseVisualStyleBackColor = true;
             buttonListaClientes.Click += buttonListaClientes_Click;
             // 
+            // buttonListaPedidos
+            // 
+            buttonListaPedidos.Location = new Point(438, 204);
+            buttonListaPedidos.Name = "buttonListaPedidos";
+            buttonListaPedidos.Size = new Size(207, 186);
+            buttonListaPedidos.TabIndex = 6;
+            buttonListaPedidos.Text = "Lista de Pedidos";
+            buttonListaPedidos.UseVisualStyleBackColor = true;
+            buttonListaPedidos.Click += buttonListaPedidos_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(880, 450);
+            Controls.Add(buttonListaPedidos);
             Controls.Add(buttonListaClientes);
             Controls.Add(buttonListaProdutos);
             Controls.Add(buttonCadastroSimplificadoProdutoBancoDados);
@@ -122,5 +134,6 @@
         private Button buttonCadastroSimplificadoProdutoBancoDados;
         private Button buttonListaProdutos;
         private Button buttonListaClientes;
+        private Button buttonListaPedidos;
     }
 }
