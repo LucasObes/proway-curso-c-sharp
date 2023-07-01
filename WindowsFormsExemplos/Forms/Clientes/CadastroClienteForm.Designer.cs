@@ -257,6 +257,7 @@
             Controls.Add(labelNome);
             Name = "CadastroClienteForm";
             Text = "CadastroClienteForm";
+            Load += CadastroClienteForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

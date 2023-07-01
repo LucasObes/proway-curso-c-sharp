@@ -28,12 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ListagemClienteForm";
+            dataGridView1 = new DataGridView();
+            ColumnCodigo = new DataGridViewTextBoxColumn();
+            ColumnNome = new DataGridViewTextBoxColumn();
+            ColumnCpf = new DataGridViewTextBoxColumn();
+            buttonCadastrar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnCodigo, ColumnNome, ColumnCpf });
+            dataGridView1.Location = new Point(12, 41);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(1047, 453);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // ColumnCodigo
+            // 
+            ColumnCodigo.HeaderText = "Código";
+            ColumnCodigo.Name = "ColumnCodigo";
+            ColumnCodigo.ReadOnly = true;
+            // 
+            // ColumnNome
+            // 
+            ColumnNome.HeaderText = "Nome";
+            ColumnNome.Name = "ColumnNome";
+            ColumnNome.ReadOnly = true;
+            // 
+            // ColumnCpf
+            // 
+            ColumnCpf.HeaderText = "CPF";
+            ColumnCpf.Name = "ColumnCpf";
+            ColumnCpf.ReadOnly = true;
+            // 
+            // buttonCadastrar
+            // 
+            buttonCadastrar.Location = new Point(984, 12);
+            buttonCadastrar.Name = "buttonCadastrar";
+            buttonCadastrar.Size = new Size(75, 23);
+            buttonCadastrar.TabIndex = 1;
+            buttonCadastrar.Text = "Cadastrar";
+            buttonCadastrar.UseVisualStyleBackColor = true;
+            buttonCadastrar.Click += buttonCadastrar_Click;
+            // 
+            // ListagemClienteForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1071, 506);
+            Controls.Add(buttonCadastrar);
+            Controls.Add(dataGridView1);
+            Name = "ListagemClienteForm";
+            Text = "ListagemClienteForm";
+            Load += ListagemClienteForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn ColumnCodigo;
+        private DataGridViewTextBoxColumn ColumnNome;
+        private DataGridViewTextBoxColumn ColumnCpf;
+        private Button buttonCadastrar;
     }
 }
