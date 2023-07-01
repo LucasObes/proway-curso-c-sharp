@@ -89,5 +89,10 @@ namespace WindowsFormsExemplos.Forms.Clientes
 
             MessageBox.Show("Cliente cadastrado com sucesso");
         }
+
+        private void CadastroClienteForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
