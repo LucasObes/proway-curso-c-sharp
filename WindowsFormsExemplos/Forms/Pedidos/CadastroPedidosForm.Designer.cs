@@ -42,6 +42,11 @@
             labelTotal = new Label();
             labelTotalValor = new Label();
             dataGridViewCarrinho = new DataGridView();
+            ColumnIdCarrinho = new DataGridViewTextBoxColumn();
+            ColumnProduto = new DataGridViewTextBoxColumn();
+            ColumnQuantidade = new DataGridViewTextBoxColumn();
+            ColumnPrecoUnitario = new DataGridViewTextBoxColumn();
+            ColumnTotal = new DataGridViewTextBoxColumn();
             labelCarrinho = new Label();
             buttonAdicionar = new Button();
             labelTotalPedido = new Label();
@@ -116,6 +121,7 @@
             comboBoxProduto.Name = "comboBoxProduto";
             comboBoxProduto.Size = new Size(401, 23);
             comboBoxProduto.TabIndex = 6;
+            comboBoxProduto.SelectedIndexChanged += comboBoxProduto_SelectedIndexChanged;
             // 
             // labelQuantidade
             // 
@@ -134,6 +140,7 @@
             numericUpDownQuantidade.Size = new Size(120, 23);
             numericUpDownQuantidade.TabIndex = 8;
             numericUpDownQuantidade.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDownQuantidade.ValueChanged += numericUpDownQuantidade_ValueChanged;
             // 
             // labelPrecoUnitario
             // 
@@ -173,12 +180,48 @@
             // 
             // dataGridViewCarrinho
             // 
+            dataGridViewCarrinho.AllowUserToAddRows = false;
+            dataGridViewCarrinho.AllowUserToDeleteRows = false;
             dataGridViewCarrinho.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCarrinho.Columns.AddRange(new DataGridViewColumn[] { ColumnIdCarrinho, ColumnProduto, ColumnQuantidade, ColumnPrecoUnitario, ColumnTotal });
             dataGridViewCarrinho.Location = new Point(442, 195);
             dataGridViewCarrinho.Name = "dataGridViewCarrinho";
+            dataGridViewCarrinho.ReadOnly = true;
             dataGridViewCarrinho.RowTemplate.Height = 25;
             dataGridViewCarrinho.Size = new Size(581, 304);
             dataGridViewCarrinho.TabIndex = 13;
+            // 
+            // ColumnIdCarrinho
+            // 
+            ColumnIdCarrinho.HeaderText = "Id";
+            ColumnIdCarrinho.Name = "ColumnIdCarrinho";
+            ColumnIdCarrinho.ReadOnly = true;
+            ColumnIdCarrinho.Visible = false;
+            // 
+            // ColumnProduto
+            // 
+            ColumnProduto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnProduto.HeaderText = "Produto";
+            ColumnProduto.Name = "ColumnProduto";
+            ColumnProduto.ReadOnly = true;
+            // 
+            // ColumnQuantidade
+            // 
+            ColumnQuantidade.HeaderText = "Quantidade";
+            ColumnQuantidade.Name = "ColumnQuantidade";
+            ColumnQuantidade.ReadOnly = true;
+            // 
+            // ColumnPrecoUnitario
+            // 
+            ColumnPrecoUnitario.HeaderText = "Preço Unitário";
+            ColumnPrecoUnitario.Name = "ColumnPrecoUnitario";
+            ColumnPrecoUnitario.ReadOnly = true;
+            // 
+            // ColumnTotal
+            // 
+            ColumnTotal.HeaderText = "Preço Total";
+            ColumnTotal.Name = "ColumnTotal";
+            ColumnTotal.ReadOnly = true;
             // 
             // labelCarrinho
             // 
@@ -198,12 +241,13 @@
             buttonAdicionar.TabIndex = 15;
             buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = true;
+            buttonAdicionar.Click += buttonAdicionar_Click;
             // 
             // labelTotalPedido
             // 
             labelTotalPedido.AutoSize = true;
             labelTotalPedido.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTotalPedido.Location = new Point(892, 502);
+            labelTotalPedido.Location = new Point(859, 503);
             labelTotalPedido.Name = "labelTotalPedido";
             labelTotalPedido.Size = new Size(106, 21);
             labelTotalPedido.TabIndex = 16;
@@ -213,7 +257,7 @@
             // 
             labelTotalPedidoValor.AutoSize = true;
             labelTotalPedidoValor.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTotalPedidoValor.Location = new Point(1004, 502);
+            labelTotalPedidoValor.Location = new Point(971, 503);
             labelTotalPedidoValor.Name = "labelTotalPedidoValor";
             labelTotalPedidoValor.Size = new Size(19, 21);
             labelTotalPedidoValor.TabIndex = 17;
@@ -227,6 +271,7 @@
             buttonFecharPedido.TabIndex = 18;
             buttonFecharPedido.Text = "Fechar Pedido";
             buttonFecharPedido.UseVisualStyleBackColor = true;
+            buttonFecharPedido.Click += buttonFecharPedido_Click;
             // 
             // buttonCancelarPedido
             // 
@@ -236,6 +281,7 @@
             buttonCancelarPedido.TabIndex = 19;
             buttonCancelarPedido.Text = "Cancelar Orçamento";
             buttonCancelarPedido.UseVisualStyleBackColor = true;
+            buttonCancelarPedido.Click += buttonCancelarPedido_Click;
             // 
             // CadastroPedidosForm
             // 
@@ -293,5 +339,10 @@
         private Label labelTotalPedidoValor;
         private Button buttonFecharPedido;
         private Button buttonCancelarPedido;
+        private DataGridViewTextBoxColumn ColumnIdCarrinho;
+        private DataGridViewTextBoxColumn ColumnProduto;
+        private DataGridViewTextBoxColumn ColumnQuantidade;
+        private DataGridViewTextBoxColumn ColumnPrecoUnitario;
+        private DataGridViewTextBoxColumn ColumnTotal;
     }
 }

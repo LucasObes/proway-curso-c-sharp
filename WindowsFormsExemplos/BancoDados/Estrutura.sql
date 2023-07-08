@@ -47,3 +47,6 @@ CREATE TABLE CARRINHO(
 );
 
 ALTER TABLE PEDIDOS ADD STATUS INT NOT NULL;
+
+-- INNER JOIN: capacidade de eu utilizar informações de mais de uma tabela dentro de uma busca no banco de dados
+-- SELECT pedidos.id, clientes.nome, pedidos.status FROM pedidos INNER JOIN clientes on (pedidos.id_cliente = cliente.id)
