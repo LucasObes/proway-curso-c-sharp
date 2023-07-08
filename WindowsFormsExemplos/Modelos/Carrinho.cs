@@ -4,6 +4,6 @@
     {
         public Pedido Venda { get; set; }
         public Produto Produto { get; set; }
-        public int Quantidde { get; set; }
+        public int Quantidade { get; set; }
     }
 }
